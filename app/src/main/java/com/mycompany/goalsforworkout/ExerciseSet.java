@@ -1,6 +1,7 @@
 package com.mycompany.goalsforworkout;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -9,8 +10,8 @@ import java.util.List;
  */
 public class ExerciseSet {
     private String mTitle;
-    private Date mStartDate;
-    private Date mEndDate;
+    private Calendar mStartDate;
+    private Calendar mEndDate;
     private Exercise mExercise;
     private List<ExerciseFeature> mFeatures;
     private int mRepCount;
@@ -28,11 +29,11 @@ public class ExerciseSet {
         mTitle = title;
     }
 
-    public Date getStartDate() {
+    public Calendar getStartDate() {
         return mStartDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(Calendar startDate) {
         mStartDate = startDate;
     }
 
@@ -76,11 +77,11 @@ public class ExerciseSet {
     }
 
     void start() {
-        mStartDate = new Date();
+        mStartDate = Calendar.getInstance();
     }
 
     void stop() {
-        mEndDate = new Date();
+        mEndDate = Calendar.getInstance();
         //todo: get actual rep count from dialog
     }
 }

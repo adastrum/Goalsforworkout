@@ -39,4 +39,11 @@ public class WorkoutFactory {
         }
         editor.apply();
     }
+
+    //todo: delete
+    public static void clear(Context context) {
+        SharedPreferences.Editor editor = getSharedPreferences(context).edit();
+        editor.clear();
+        editor.commit();
+    }
 }

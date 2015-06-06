@@ -1,5 +1,6 @@
 package com.mycompany.goalsforworkout;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -8,7 +9,7 @@ import java.util.List;
 /**
  * Created by asus on 31.05.2015.
  */
-public class ExerciseSet {
+public class ExerciseSet implements Serializable {
     private String mTitle;
     private Calendar mStartDate;
     private Calendar mEndDate;
@@ -17,8 +18,12 @@ public class ExerciseSet {
     private int mRepCount;
     private int mActualRepCount;
 
-    public ExerciseSet(String title) {
-        mTitle = title;
+    public ExerciseSet() {
+        initialize();
+    }
+
+    void initialize() {
+
     }
 
     public String getTitle() {

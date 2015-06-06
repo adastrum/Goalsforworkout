@@ -8,14 +8,20 @@ public class ExerciseFeature {
     private float mAmount;
     private ExerciseUnit mUnit;
 
-    public ExerciseFeature(String title) {
-        mTitle = title;
+    public ExerciseFeature() {
+        initialize();
     }
 
     public ExerciseFeature(String title, float amount, ExerciseUnit unit) {
+        initialize();
+
         mTitle = title;
         mAmount = amount;
         mUnit = unit;
+    }
+
+    void initialize() {
+
     }
 
     public String getTitle() {
@@ -38,7 +44,7 @@ public class ExerciseFeature {
         return mUnit;
     }
 
-    public void setmUnit(ExerciseUnit unit) {
+    public void setUnit(ExerciseUnit unit) {
         mUnit = unit;
     }
 }

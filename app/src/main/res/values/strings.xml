@@ -3,4 +3,15 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="button_add_workout">add</string>
+    <string name="button_save">save</string>
+    <string name="button_clear">clear</string>>
+    <string name="button_add_exercise_set">add</string>
+    <string name="button_add_exercise_feature">add</string>
+    <string name="workout_title_default">untitled</string>
+    <string name="exercise_set_title_default">untitled</string>
+    <string name="exercise_feature_title_default">untitled</string>
+    <string name="title_activity_workouts">workouts</string>
+    <string name="title_activity_workout_details">workout details</string>
+    <string name="title_activity_exercise_set_details">set details</string>
 </resources>

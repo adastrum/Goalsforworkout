@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context="com.mycompany.goalsforworkout.ExerciseSetDetailsActivity">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -14,9 +14,9 @@
         android:orientation="vertical">
 
         <ListView
-            android:id="@+id/workouts"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:id="@+id/exercise_features"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_weight="1" />
@@ -27,22 +27,11 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button_add_workout"
+                android:id="@+id/button_add_exercise_feature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_add_workout" />
-
-            <Button
-                android:id="@+id/button_save"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/button_save" />
-
-            <Button
-                android:id="@+id/button_clear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/button_clear" />
+                android:text="@string/button_add_exercise_feature" />
         </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>

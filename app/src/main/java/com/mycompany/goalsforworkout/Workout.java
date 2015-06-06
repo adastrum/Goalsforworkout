@@ -1,5 +1,6 @@
 package com.mycompany.goalsforworkout;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -8,36 +9,28 @@ import java.util.List;
 /**
  * Created by asus on 31.05.2015.
  */
-public class Workout {
-    static final String WORKOUT_TITLE_DEFAULT = "untitled";
-
+public class Workout implements Serializable {
     private String mTitle;
+    private Calendar mCreationDate;
     private Calendar mStartDate;
     private Calendar mEndDate;
     private List<ExerciseSet> mSets;
     private int mCurrentSetIndex;
 
     Workout() {
-        mTitle = WORKOUT_TITLE_DEFAULT;
-        initialize();
-    }
-
-    Workout(String title) {
-        mTitle = title;
         initialize();
     }
 
     void initialize() {
-        mSets = new ArrayList();
         mCurrentSetIndex = 0;
+        mCreationDate = Calendar.getInstance();
     }
 
-    void addSet(ExerciseSet set) {
-        mSets.add(set);
-    }
-
-    void addSetRange(List<ExerciseSet> sets) {
-        mSets.addAll(sets);
+    public List<ExerciseSet> getSets() {
+        if(mSets == null) {
+            mSets = new ArrayList<ExerciseSet>();
+        }
+        return mSets;
     }
 
     void start() {
@@ -61,6 +54,6 @@ public class Workout {
     }
 
     public long getId() {
-        return mStartDate.getTimeInMillis();
+        return mCreationDate.getTimeInMillis();
     }
 }

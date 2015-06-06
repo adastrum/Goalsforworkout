@@ -2,12 +2,14 @@ package com.mycompany.goalsforworkout;
 
 import android.app.Activity;
 import android.app.LoaderManager;
+import android.content.Intent;
 import android.content.Loader;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -82,8 +84,7 @@ public class MainActivity extends Activity implements LoaderManager.LoaderCallba
             @Override
             public void onClick(View v) {
                 Workout workout = new Workout();
-                workout.start();
-                workout.stop();
+                workout.setTitle(getString(R.string.workout_title_default));
                 mWorkouts.add(workout);
                 mWorkoutAdapter.notifyDataSetChanged();
             }
@@ -94,6 +95,24 @@ public class MainActivity extends Activity implements LoaderManager.LoaderCallba
             @Override
             public void onClick(View v) {
                 WorkoutFactory.saveWorkouts(MainActivity.this, mWorkouts);
+            }
+        });
+
+        //todo: delete
+        button = (Button) findViewById(R.id.button_clear);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WorkoutFactory.clear(MainActivity.this);
+            }
+        });
+
+        mWorkoutListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getBaseContext(), WorkoutDetailsActivity.class);
+                intent.putExtra(WorkoutDetailsActivity.EXTRA_WORKOUT, (Workout) mWorkoutListView.getItemAtPosition(position));
+                startActivity(intent);
             }
         });
     }
